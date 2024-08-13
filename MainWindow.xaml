@@ -1,0 +1,65 @@
+﻿<Window x:Class="BackupApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Aplikacja Backup" Height="320" Width="525" MinHeight="320" MinWidth="525">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Button Name="btnSelectSource" Content="Wybierz folder źródłowy" Grid.Row="0" Grid.Column="0" Margin="5" Click="btnSelectSource_Click"/>
+        <Button Name="btnSelectDestination" Content="Wybierz folder docelowy" Grid.Row="0" Grid.Column="1" Margin="5" Click="btnSelectDestination_Click"/>
+
+        <TextBox Name="txtSource" Grid.Row="1" Grid.Column="0" Margin="5" IsReadOnly="True"/>
+        <TextBox Name="txtDestination" Grid.Row="1" Grid.Column="1" Margin="5" IsReadOnly="True"/>
+
+        <!-- Grid to handle placeholder text -->
+        <Grid Grid.Row="2" Grid.Column="0" Margin="5">
+            <TextBox Name="txtFrequency" TextChanged="txtFrequency_TextChanged"/>
+            <TextBlock Text="Częstotliwość (np. 1)" 
+                       IsHitTestVisible="False" 
+                       Foreground="Gray"
+                       VerticalAlignment="Center" 
+                       HorizontalAlignment="Left"
+                       Margin="3,0,0,0"
+                       Visibility="Collapsed"
+                       Name="placeholderText"/>
+        </Grid>
+
+        <ComboBox Name="cbTimeUnit" Grid.Row="2" Grid.Column="1" Margin="5">
+            <ComboBoxItem Content="Sekundy"/>
+            <ComboBoxItem Content="Minuty"/>
+            <ComboBoxItem Content="Godziny"/>
+            <ComboBoxItem Content="Dni"/>
+        </ComboBox>
+
+        <Button Name="btnStartBackup" Content="Rozpocznij kopię zapasową" Grid.Row="3" Grid.ColumnSpan="2" Margin="5" Click="btnStartBackup_Click"/>
+        <Button Name="btnStopBackup" Content="Zatrzymaj kopię zapasową" Grid.Row="4" Grid.ColumnSpan="2" Margin="5" Click="btnStopBackup_Click" IsEnabled="False"/>
+
+        <ProgressBar Name="progressBar" Grid.Row="5" Grid.ColumnSpan="2" Margin="5" Height="20" Minimum="0" Maximum="100" Visibility="Visible"/>
+        <Label Name="lblProgress" Grid.Row="5" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5"/>
+        <Label Name="lblCurrentInterval" Grid.Row="6" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5"/>
+
+        <!-- CheckBoxes for toggling details and startup -->
+        <CheckBox Name="chkShowLogs" Content="Pokaż szczegóły" Grid.Row="7" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="5" Checked="chkShowLogs_Checked" Unchecked="chkShowLogs_Unchecked"/>
+        <CheckBox Name="chkStartWithWindows" Content="Uruchom przy starcie systemu" Grid.Row="8" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="5" Checked="chkStartWithWindows_Checked" Unchecked="chkStartWithWindows_Unchecked"/>
+
+        <!-- ScrollViewer is now below the CheckBox -->
+        <ScrollViewer Grid.Row="9" Grid.ColumnSpan="2" Margin="5" VerticalScrollBarVisibility="Auto" Visibility="Collapsed" Name="scrollViewer">
+            <TextBox Name="txtLog" AcceptsReturn="True" IsReadOnly="True" VerticalScrollBarVisibility="Auto"/>
+        </ScrollViewer>
+    </Grid>
+</Window>
