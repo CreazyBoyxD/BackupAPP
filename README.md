@@ -1,18 +1,38 @@
 # BackupApp
 
-BackupApp to prosty i efektywny program do automatycznego tworzenia kopii zapasowych. Umożliwia użytkownikom skonfigurowanie regularnych kopii zapasowych folderów, a także zarządzanie ustawieniami backupu i logami. Program obsługuje różne jednostki czasu dla częstotliwości backupu i może uruchamiać się automatycznie przy rozruchu systemu Windows.
+BackupApp to aplikacja do automatycznego tworzenia kopii zapasowych plików i folderów na Twoim komputerze. Umożliwia łatwe planowanie i zarządzanie kopią zapasową oraz monitorowanie postępu procesu.
 
-## Funkcjonalności
+## Funkcje
 
-- **Tworzenie kopii zapasowych**: Automatyczne tworzenie kopii zapasowych wybranych folderów.
-- **Ustawienie częstotliwości**: Możliwość ustawienia częstotliwości kopii zapasowej w sekundach, minutach, godzinach lub dniach.
-- **Logowanie**: Generowanie logów z postępów kopii zapasowej.
-- **Interfejs graficzny**: Przejrzysty interfejs umożliwiający łatwe ustawienie i zarządzanie backupami.
-- **Automatyczne uruchamianie**: Możliwość uruchamiania aplikacji przy starcie systemu Windows.
+- **Planowanie Kopii Zapasowej**: Ustaw częstotliwość wykonywania kopii zapasowej w sekundach, minutach, godzinach lub dniach.
+- **Monitorowanie Postępu**: Śledź postęp tworzenia kopii zapasowej za pomocą paska postępu i szczegółowych logów.
+- **Uruchamianie Przy Rozruchu**: Opcja uruchamiania aplikacji automatycznie przy starcie systemu Windows.
+- **Zarządzanie Ustawieniami**: Łatwe dostosowywanie ścieżek źródłowych i docelowych oraz częstotliwości kopii zapasowej.
+- **Szczegóły Logów**: Wyświetlanie i ukrywanie logów dotyczących procesu tworzenia kopii zapasowej.
 
-## Instalacja
+## Wymagania
 
-1. **Klonowanie repozytorium**
+- **System Operacyjny**: Windows 7 lub nowszy
+- **.NET Framework**: 4.8 lub nowszy
 
-   ```bash
-   git clone https://github.com/CreazyBoyxD/BackupApp
+## Użycie
+
+Aby korzystać z BackupApp:
+
+- **Wybierz Foldery**:
+  - Użyj przycisków "Wybierz folder źródłowy" i "Wybierz folder docelowy", aby wskazać lokalizacje plików, które chcesz zarchiwizować oraz miejsce, w którym kopie zapasowe będą przechowywane.
+
+- **Ustaw Częstotliwość**:
+  - Wprowadź częstotliwość tworzenia kopii zapasowej w sekundach, minutach, godzinach lub dniach, korzystając z pola tekstowego i rozwijanej listy.
+
+- **Rozpocznij Kopię Zapasową**:
+  - Kliknij przycisk "Rozpocznij Kopię Zapasową", aby rozpocząć proces tworzenia kopii zapasowej według ustalonego harmonogramu.
+
+- **Monitorowanie**:
+  - Obserwuj postęp tworzenia kopii zapasowej na pasku postępu. Szczegóły dotyczące postępu i czasu pozostałego do zakończenia będą wyświetlane w oknie logów.
+
+- **Zarządzanie Startem Przy Rozruchu**:
+  - Zaznacz opcję "Uruchamiaj przy rozruchu systemu", aby automatycznie uruchamiać aplikację po włączeniu komputera.
+
+- **Wyświetlanie Logów**:
+  - Użyj opcji "Pokaż szczegóły" w celu wyświetlenia lub ukrycia logów procesu tworzenia kopii zapasowej.
